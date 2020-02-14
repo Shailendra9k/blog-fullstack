@@ -9,16 +9,16 @@ import ArticlesList from "./pages/ArticlesList";
 
 function App() {
   return (
-    <div id="page-body">
-      <Router>
-        <div className="App">
+    <Router>
+      <div className="App">
+        <div id="page-body">
           <Route path="/" component={HomePage} exact />
           <Route path="/about" component={AboutPage} exact />
           <Route path="/articles-list" component={ArticlesList} exact />
           <Route path="/article" component={ArticlePage} exact />
         </div>
-      </Router>
-    </div>
+      </div>
+    </Router>
   );
 }
 
