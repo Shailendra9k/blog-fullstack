@@ -7,6 +7,7 @@ import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import ArticlePage from "./pages/ArticlePage";
 import ArticlesListPage from "./pages/ArticlesListPage";
+import ErrorPage from "./pages/ErrorPage";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/about" component={AboutPage} />
           <Route path="/articles-list" component={ArticlesListPage} />
           <Route path="/article/:name" component={ArticlePage} />
+          <Route component={ErrorPage} />
         </div>
       </div>
     </Router>
