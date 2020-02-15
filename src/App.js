@@ -2,12 +2,12 @@ import React from "react";
 import "./App.css";
 import NavBar from "./NavBar";
 
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import ArticlePage from "./pages/ArticlePage";
 import ArticlesListPage from "./pages/ArticlesListPage";
-import ErrorPage from "./pages/ErrorPage";
+import NotFoundPage from "./pages/NotFoundPage";
 
 function App() {
   return (
@@ -15,11 +15,13 @@ function App() {
       <div className="App">
         <NavBar />
         <div id="page-body">
-          <Route path="/" component={HomePage} exact />
-          <Route path="/about" component={AboutPage} />
-          <Route path="/articles-list" component={ArticlesListPage} />
-          <Route path="/article/:name" component={ArticlePage} />
-          <Route component={ErrorPage} />
+          <Switch>
+            <Route path="/" component={HomePage} exact />
+            <Route path="/about" component={AboutPage} />
+            <Route path="/articles-list" component={ArticlesListPage} />
+            <Route path="/article/:name" component={ArticlePage} />
+            <Route component={NotFoundPage} />
+          </Switch>
         </div>
       </div>
     </Router>
